@@ -50,7 +50,9 @@ strip them with `REPLACE(column, '"', '')`.
 Before (raw bronze) and after (clean silver):
 
 ![Quotes before](images/quotes_after_import.PNG)
+
 ![Quotes before](images/quotes_after_import_products_table.PNG)
+
 ![Quotes after](images/cleaning_quotes.PNG)
 
 **The 1899 dates.** In the orders table, the columns `order_approved_at`,
@@ -69,8 +71,9 @@ for nulls before building the silver layer. No real duplicates anywhere. The
 only nulls are the genuine ones in orders (some orders were never approved or
 delivered):
 
-![Data quality checks](images/data_quality_checks.png)
-![Data quality checks](images/data_quality_checks_1.png)
+![Data quality checks](images/data_quality_checks.PNG)
+
+![Data quality checks](images/data_quality_checks_1.PNG)
 
 # Partitioning
 
@@ -97,11 +100,9 @@ tables so they're easy to filter and group by.
 
 # The reports
 
-**1. Top product categories by sales.** Sales are concentrated in a few
-categories — health & beauty leads, followed by watches/gifts and bed-bath-table.
-A long tail of smaller categories makes up the rest.
+**1. Top product categories by sales.** Sales are concentrated at the top. The five biggest categories are health & beauty (beleza_saude, ~R$1.40M), watches & gifts (relogios_presentes, ~R$1.26M), bed-bath-table (cama_mesa_banho, ~R$1.21M), sports & leisure (esporte_lazer, ~R$1.11M) and computer accessories (informatica_acessorios, ~R$1.02M) — these five are the clear leaders, each above R$1M. After them the numbers drop into a long tail of smaller categories. Notably, telefonia (phones) comes in much lower at ~R$374K, well behind the leaders despite being a major product type.
 
-![Top categories](images/report1_top_10 product_category.PNG)
+![Top categories](images/report1_top_10_product_category.PNG)
 
 **2. Average delivery time per seller.** Most sellers deliver in about 8–15 days.
 A few show very high averages (up to ~190 days), but those are low-volume sellers
@@ -114,4 +115,4 @@ alongside how many orders each seller actually had.
 alone has about 40,500 orders — more than three times the next state — and
 SP, RJ and MG together make up most of the orders.
 
-![Orders by state](images/report3_top_10_total_order_per_state.png)
+![Orders by state](images/report3_top_10_total_order_per_state.PNG)
